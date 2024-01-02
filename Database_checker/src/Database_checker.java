@@ -1,20 +1,15 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Database_checker {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
 //        Make interface with Swing later; just commmand line for now
 
-        System.out.println("Welcome to database checker\n-------------------------\nTo begin, please enter the following information\n");
+        System.out.println("Welcome to database checker\n");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter your database username: \n");
-        String username = scanner.nextLine();
-
-        System.out.println("Please enter your database password: \n");
-        String patientName = scanner.nextLine();
-
 
         int choice;
         do {
@@ -25,6 +20,19 @@ public class Database_checker {
             choice = scanner.nextInt();
             switch(choice) {
                 case 1:
+
+                    scanner.nextLine();
+                    System.out.println("Please enter your database SQL URL name: \n");
+                    String schema = scanner.nextLine();
+
+                    System.out.println("Please enter your database username: \n");
+                    String username = scanner.nextLine();
+
+                    System.out.println("Please enter your database password: \n");
+                    String password = scanner.nextLine();
+
+                    Database_actions.databaseChecker(username, password);
+
                     break;
                 case 2:
                     break;
