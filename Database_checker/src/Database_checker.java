@@ -1,6 +1,11 @@
 public class Database_checker {
 
     public static void main(String[] args) {
-        System.out.println("Working");
+
+//        Make interface with Swing later; just commmand line for now
+
+        System.out.println("Welcome to database checker\n-------------------------");
+
+        
     }
 }
