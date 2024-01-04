@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -31,7 +32,7 @@ public class Database_checker {
         x.add(m4);
         x.add(m5);
 
-        mb.add(x);
+        f.add(mb, BorderLayout.NORTH);
 
         f.setJMenuBar(mb);
 
