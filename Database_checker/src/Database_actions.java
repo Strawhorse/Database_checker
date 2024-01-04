@@ -17,4 +17,8 @@ public class Database_actions {
         }
     }
 
+    public static void listDatabaseEntries(){
+        System.out.println("Entries for database include:");
+    }
+
 }

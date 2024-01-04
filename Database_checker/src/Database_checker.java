@@ -1,21 +1,53 @@
+import javax.swing.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Database_checker {
 
+    //        create frame, menubar and submenu
+
+    static JMenuBar mb;
+    static JMenu x;
+    static JMenuItem m1, m2, m3, m4, m5;
+    static JFrame f;
+
+
+
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-//        Make interface with Swing later; just commmand line for now
+        f = new JFrame("Database checker");
+        mb = new JMenuBar();
+        x = new JMenu();
 
-        System.out.println("Welcome to database checker\n");
+        m1 = new JMenuItem("List Databases");
+        m2 = new JMenuItem("List Database Entries");
+        m3 = new JMenuItem("Delete Database/s");
+        m4 = new JMenuItem("Create New Database/s");
+        m5 = new JMenuItem("Close Program");
 
+        x.add(m1);
+        x.add(m2);
+        x.add(m3);
+        x.add(m4);
+        x.add(m5);
+
+        mb.add(x);
+
+        f.setJMenuBar(mb);
+
+        f.setSize(850,850);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+
+
+
+//        scanner for reading in menu items - will remove and replace with proper methods and loops
         Scanner scanner = new Scanner(System.in);
 
         int choice;
         do {
-            System.out.println("Please choose from the following actions:\n");
-            System.out.println("1 List databases on this computer schema\n2 Check number of entries in database \n3 Delete database from schema \n4 Create new database on schema \n5 Close system down");
-            System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*");
 
             choice = scanner.nextInt();
             switch(choice) {
