@@ -14,7 +14,7 @@ public class Database_checker {
         int choice;
         do {
             System.out.println("Please choose from the following actions:\n");
-            System.out.println("1 List databases on this computer \n2 Check number of entries in database \n3 Delete database \n4 Create new database \n5 Close system down");
+            System.out.println("1 List databases on this computer schema\n2 Check number of entries in database \n3 Delete database from schema \n4 Create new database on schema \n5 Close system down");
             System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*");
 
             choice = scanner.nextInt();
@@ -31,7 +31,7 @@ public class Database_checker {
                     System.out.println("Please enter your database password: \n");
                     String password = scanner.nextLine();
 
-                    Database_actions.databaseChecker(username, password);
+                    Database_actions.databaseChecker(schema, username, password);
 
                     break;
                 case 2:

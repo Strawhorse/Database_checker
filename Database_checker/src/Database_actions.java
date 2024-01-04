@@ -4,9 +4,9 @@ import java.sql.*;
 public class Database_actions {
 
 //    enter database methods here
-    public static void databaseChecker(String username, String password) throws SQLException, ClassNotFoundException {
+    public static void databaseChecker(String schema, String username, String password) throws SQLException, ClassNotFoundException {
         boolean check = false;
-        Connection con = DB.getCon(username, password);
+        Connection con = DB.getCon(schema, username, password);
         String query = "SHOW Databases;";
         assert con != null;
         Statement statement = con.createStatement();
