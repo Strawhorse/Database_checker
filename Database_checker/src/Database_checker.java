@@ -31,6 +31,7 @@ public class Database_checker {
         x.add(m3);
         x.add(m4);
         x.add(m5);
+        mb.add(x);
 
         f.add(mb, BorderLayout.NORTH);
 
@@ -39,7 +40,6 @@ public class Database_checker {
         f.setSize(850,850);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
 
