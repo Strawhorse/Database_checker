@@ -3,9 +3,7 @@ import java.awt.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Database_checker {
-
-    //        create frame, menubar and submenu
+public class Database_checker extends JFrame {
 
     static JMenuBar mb;
     static JMenu x;
@@ -13,9 +11,7 @@ public class Database_checker {
     static JFrame f;
 
 
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-
+    Database_checker() {
         f = new JFrame("Database checker");
         mb = new JMenuBar();
         x = new JMenu();
@@ -34,49 +30,21 @@ public class Database_checker {
         mb.add(x);
 
         f.add(mb, BorderLayout.NORTH);
-
         f.setJMenuBar(mb);
-
         f.setSize(850,850);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
 
+    }
 
 
 
-//        scanner for reading in menu items - will remove and replace with proper methods and loops
-        Scanner scanner = new Scanner(System.in);
+//    main method for instantiating the JFrame class
 
-        int choice;
-        do {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-            choice = scanner.nextInt();
-            switch(choice) {
-                case 1:
+        Database_checker frame = new Database_checker();
 
-                    scanner.nextLine();
-                    System.out.println("Please enter your database SQL URL name: \n");
-                    String schema = scanner.nextLine();
 
-                    System.out.println("Please enter your database username: \n");
-                    String username = scanner.nextLine();
-
-                    System.out.println("Please enter your database password: \n");
-                    String password = scanner.nextLine();
-
-                    Database_actions.databaseChecker(schema, username, password);
-
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    System.out.println("Thank you for using the database checker.");
-                    break;
-            }
-        } while (choice !=5);
     }
 }
