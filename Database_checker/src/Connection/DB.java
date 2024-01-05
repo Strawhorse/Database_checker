@@ -14,9 +14,7 @@ public class DB {
             System.out.println("Connection successful");
             return con;
 
-        } catch (SQLException e) {
-            System.out.println(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             System.out.println(e);
         }
         return null;

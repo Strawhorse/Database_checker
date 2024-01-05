@@ -69,3 +69,6 @@ public class Database_checker extends JFrame {
 
     }
 }
+
+
+//Help from: https://youtu.be/oiL9AlDWbQc?t=549
