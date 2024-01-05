@@ -5,14 +5,17 @@ import java.util.Scanner;
 
 public class Database_checker extends JFrame {
 
-    static JMenuBar mb;
-    static JMenu x;
-    static JMenuItem m1, m2, m3, m4, m5;
-    static JFrame f;
-
 
     Database_checker() {
-        f = new JFrame("Database checker");
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(800,800);
+        this.setTitle("Database checker");
+        this.setLocationRelativeTo(null);
+        this.setLayout(new FlowLayout());
+        this.setVisible(true);
+
+
         mb = new JMenuBar();
         x = new JMenu();
 
@@ -31,9 +34,6 @@ public class Database_checker extends JFrame {
 
         f.add(mb, BorderLayout.NORTH);
         f.setJMenuBar(mb);
-        f.setSize(850,850);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
 
     }
 
