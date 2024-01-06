@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 
-public class Database_checker extends JFrame {
+public class Database_checker extends JFrame implements ActionListener {
 
+//    create instances of necessary variables
     JMenuBar menuBar;
     JMenu menu;
     JMenu menu2;
@@ -51,6 +54,8 @@ public class Database_checker extends JFrame {
         this.setJMenuBar(menuBar);
 
 
+
+
 //      display the frame
         this.setVisible(true);
 
@@ -66,6 +71,13 @@ public class Database_checker extends JFrame {
 
         Database_checker frame = new Database_checker();
 
+
+    }
+
+
+//    Implemented ActionListener so much create actionPerformed method
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
     }
 }
