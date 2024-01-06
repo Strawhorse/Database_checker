@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,10 +55,39 @@ public class Database_checker extends JFrame implements ActionListener {
         this.setJMenuBar(menuBar);
 
 
-//        begin to create listeners for menu items
-        menu.addActionListener(this);
-        menu2.addActionListener(this);
+//        begin to create listeners for menu items and submenus
+        menu.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+                System.out.println("This is the main menu");
+            }
 
+            @Override
+            public void menuDeselected(MenuEvent e) {
+
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+
+            }
+        });
+        menu2.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+
+            }
+        });
 
         m1.addActionListener(this);
         m2.addActionListener(this);
@@ -89,7 +120,9 @@ public class Database_checker extends JFrame implements ActionListener {
 //    Implemented ActionListener so much create actionPerformed method for the menu items
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource()==m5) {
+            System.out.println("You clicked on the Close option...");
+        }
     }
 }
 
