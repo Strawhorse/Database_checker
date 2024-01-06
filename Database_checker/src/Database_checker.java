@@ -89,6 +89,7 @@ public class Database_checker extends JFrame implements ActionListener {
             }
         });
 
+        //sub-menu items
         m1.addActionListener(this);
         m2.addActionListener(this);
         m3.addActionListener(this);
@@ -122,6 +123,7 @@ public class Database_checker extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==m5) {
             System.out.println("You clicked on the Close option...");
+            System.exit(0);
         }
     }
 }
