@@ -97,28 +97,15 @@ public class Database_checker extends JFrame implements ActionListener {
         m5.addActionListener(this);
 
 
-
-
 //      display the frame
         this.setVisible(true);
 
-
     }
 
 
 
-
-//    main method for instantiating the JFrame class
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-
-        Database_checker frame = new Database_checker();
-
-
-    }
-
-
-//    Implemented ActionListener so much create actionPerformed method for the menu items
+    //    Implemented ActionListener so much create actionPerformed method for the menu items
+//    Use separate classes and methods to carry out actions
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==m5) {
@@ -126,7 +113,17 @@ public class Database_checker extends JFrame implements ActionListener {
             System.exit(0);
         }
     }
+
+
+
+
+
+
+//    main method for instantiating the JFrame class
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Database_checker frame = new Database_checker();
+    }
+
+
+
 }
-
-
-//Help from: https://youtu.be/oiL9AlDWbQc?t=549
