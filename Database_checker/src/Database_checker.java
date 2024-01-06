@@ -46,12 +46,23 @@ public class Database_checker extends JFrame implements ActionListener {
         menu.add(m2);
         menu.add(m3);
         menu.add(m4);
-
         menu2.add(m5);
 
 
 //        finally, set the menu bar to the frame
         this.setJMenuBar(menuBar);
+
+
+//        begin to create listeners for menu items
+        menu.addActionListener(this);
+        menu2.addActionListener(this);
+
+
+        m1.addActionListener(this);
+        m2.addActionListener(this);
+        m3.addActionListener(this);
+        m4.addActionListener(this);
+        m5.addActionListener(this);
 
 
 
@@ -75,7 +86,7 @@ public class Database_checker extends JFrame implements ActionListener {
     }
 
 
-//    Implemented ActionListener so much create actionPerformed method
+//    Implemented ActionListener so much create actionPerformed method for the menu items
     @Override
     public void actionPerformed(ActionEvent e) {
 
