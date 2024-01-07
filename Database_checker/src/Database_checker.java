@@ -110,15 +110,25 @@ public class Database_checker extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (e.getSource() == 1) {
+        if (e.getSource() == m1) {
             System.out.println("List Databases");
-        } else if (source == 2) {
+            String schema = null;
+            String username = null;
+            String password = null;
+            try {
+                Database_actions.databaseChecker(schema, username, password);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        } else if (source == m2) {
             System.out.println("List Database Entries");
-        } else if (source == 3) {
+        } else if (source == m3) {
             System.out.println("Delete Databases/s");
-        } else if (source == 4) {
+        } else if (source == m4) {
             System.out.println("Create New Database/s");
-        } else if (source == 5) {
+        } else if (source == m5) {
             System.out.println("You clicked on the Close option...");
             System.exit(0);
         } else {
