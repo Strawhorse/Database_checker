@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.Objects;
 
 
 public class Database_checker extends JFrame implements ActionListener {
@@ -108,10 +109,22 @@ public class Database_checker extends JFrame implements ActionListener {
 //    Use separate classes and methods to carry out actions
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==m5) {
+        Object source = e.getSource();
+        if (e.getSource() == 1) {
+            System.out.println("List Databases");
+        } else if (source == 2) {
+            System.out.println("List Database Entries");
+        } else if (source == 3) {
+            System.out.println("Delete Databases/s");
+        } else if (source == 4) {
+            System.out.println("Create New Database/s");
+        } else if (source == 5) {
             System.out.println("You clicked on the Close option...");
             System.exit(0);
+        } else {
+            throw new IllegalStateException("Unexpected value: " + e.getSource());
         }
+
     }
 
 
