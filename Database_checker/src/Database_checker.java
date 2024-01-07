@@ -109,32 +109,27 @@ public class Database_checker extends JFrame implements ActionListener {
 //    Use separate classes and methods to carry out actions
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
-        if (e.getSource() == m1) {
-            System.out.println("List Databases");
-            String schema = null;
-            String username = null;
-            String password = null;
-            try {
-                Database_actions.databaseChecker(schema, username, password);
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            } catch (ClassNotFoundException ex) {
-                throw new RuntimeException(ex);
-            }
-        } else if (source == m2) {
-            System.out.println("List Database Entries");
-        } else if (source == m3) {
-            System.out.println("Delete Databases/s");
-        } else if (source == m4) {
-            System.out.println("Create New Database/s");
-        } else if (source == m5) {
-            System.out.println("You clicked on the Close option...");
-            System.exit(0);
-        } else {
-            throw new IllegalStateException("Unexpected value: " + e.getSource());
+
+        if(e.getSource()==m1) {
+            System.out.println("Check Database list");
         }
 
+        if(e.getSource()==m2) {
+            System.out.println("Check Database entries");
+        }
+
+        if(e.getSource()==m3) {
+            System.out.println("Delete database/s");
+        }
+
+        if(e.getSource()==m4) {
+            System.out.println("Create Database/s");
+        }
+
+        if(e.getSource()==m5) {
+            System.out.println("Close");
+            System.exit(0);
+        }
     }
 
 
