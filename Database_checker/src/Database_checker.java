@@ -20,6 +20,9 @@ public class Database_checker extends JFrame implements ActionListener {
     JMenuItem m4;
     JMenuItem m5;
 
+//    for popup window to take database details
+    Popup popup;
+
     Database_checker() {
 
 //        set out the JFrame first
@@ -57,38 +60,38 @@ public class Database_checker extends JFrame implements ActionListener {
 
 
 //        begin to create listeners for menu items and submenus
-        menu.addMenuListener(new MenuListener() {
-            @Override
-            public void menuSelected(MenuEvent e) {
-                System.out.println("This is the main menu");
-            }
-
-            @Override
-            public void menuDeselected(MenuEvent e) {
-
-            }
-
-            @Override
-            public void menuCanceled(MenuEvent e) {
-
-            }
-        });
-        menu2.addMenuListener(new MenuListener() {
-            @Override
-            public void menuSelected(MenuEvent e) {
-
-            }
-
-            @Override
-            public void menuDeselected(MenuEvent e) {
-
-            }
-
-            @Override
-            public void menuCanceled(MenuEvent e) {
-
-            }
-        });
+//        menu.addMenuListener(new MenuListener() {
+//            @Override
+//            public void menuSelected(MenuEvent e) {
+//                System.out.println("This is the main menu");
+//            }
+//
+//            @Override
+//            public void menuDeselected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuCanceled(MenuEvent e) {
+//
+//            }
+//        });
+//        menu2.addMenuListener(new MenuListener() {
+//            @Override
+//            public void menuSelected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuDeselected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuCanceled(MenuEvent e) {
+//
+//            }
+//        });
 
         //sub-menu items
         m1.addActionListener(this);
@@ -112,6 +115,9 @@ public class Database_checker extends JFrame implements ActionListener {
 
         if(e.getSource()==m1) {
             System.out.println("Check Database list");
+
+//            Will try practice code here to make into a method in Database_actions later
+            
         }
 
         if(e.getSource()==m2) {
