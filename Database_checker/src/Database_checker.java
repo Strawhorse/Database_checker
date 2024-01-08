@@ -82,8 +82,38 @@ public class Database_checker extends JFrame implements ActionListener {
             System.out.println("Check Database list");
 
 //            Will try practice code here to make into a method in Database_actions later
-            String schema = JOptionPane.showInputDialog("Hi, you clicked on Check Database List");
-            System.out.println(schema);
+            JTextField schemaField = new JTextField(10);
+            JTextField usernameField = new JTextField(10);
+            JTextField passwordField = new JTextField(10);
+
+            JPanel myPanel = new JPanel();
+            myPanel.add(new JLabel("Schema:"));
+            myPanel.add(schemaField);
+            myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+            myPanel.add(new JLabel("Username:"));
+            myPanel.add(usernameField);
+            myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+            myPanel.add(new JLabel("Password:"));
+            myPanel.add(passwordField);
+
+            int result = JOptionPane.showConfirmDialog(null, myPanel,
+                    "Please Enter Database Schema, Username, and Password", JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_OPTION) {
+                System.out.println("Schema: " + schemaField.getText());
+                System.out.println("Username: " + usernameField.getText());
+                System.out.println("Password: " + passwordField.getText());
+            } else {
+                System.out.println("Nothing entered...");
+            }
+
+            try {
+                Database_actions.databaseChecker(schemaField.getText(), usernameField.getText(), passwordField.getText());
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+
         }
 
         if(e.getSource()==m2) {
