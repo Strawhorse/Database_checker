@@ -1,12 +1,8 @@
 import javax.swing.*;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Objects;
-
 
 public class Database_checker extends JFrame implements ActionListener {
 
@@ -20,8 +16,10 @@ public class Database_checker extends JFrame implements ActionListener {
     JMenuItem m4;
     JMenuItem m5;
 
-//    for popup window to take database details
-    Popup popup;
+
+//    JOptionPane for taking in database information
+
+
 
     Database_checker() {
 
@@ -59,39 +57,6 @@ public class Database_checker extends JFrame implements ActionListener {
         this.setJMenuBar(menuBar);
 
 
-//        begin to create listeners for menu items and submenus
-//        menu.addMenuListener(new MenuListener() {
-//            @Override
-//            public void menuSelected(MenuEvent e) {
-//                System.out.println("This is the main menu");
-//            }
-//
-//            @Override
-//            public void menuDeselected(MenuEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void menuCanceled(MenuEvent e) {
-//
-//            }
-//        });
-//        menu2.addMenuListener(new MenuListener() {
-//            @Override
-//            public void menuSelected(MenuEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void menuDeselected(MenuEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void menuCanceled(MenuEvent e) {
-//
-//            }
-//        });
 
         //sub-menu items
         m1.addActionListener(this);
@@ -117,7 +82,8 @@ public class Database_checker extends JFrame implements ActionListener {
             System.out.println("Check Database list");
 
 //            Will try practice code here to make into a method in Database_actions later
-            
+            String schema = JOptionPane.showInputDialog("Hi, you clicked on Check Database List");
+            System.out.println(schema);
         }
 
         if(e.getSource()==m2) {
@@ -151,3 +117,40 @@ public class Database_checker extends JFrame implements ActionListener {
 
 
 }
+
+
+
+
+//        begin to create listeners for menu items and submenus
+//        menu.addMenuListener(new MenuListener() {
+//            @Override
+//            public void menuSelected(MenuEvent e) {
+//                System.out.println("This is the main menu");
+//            }
+//
+//            @Override
+//            public void menuDeselected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuCanceled(MenuEvent e) {
+//
+//            }
+//        });
+//        menu2.addMenuListener(new MenuListener() {
+//            @Override
+//            public void menuSelected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuDeselected(MenuEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void menuCanceled(MenuEvent e) {
+//
+//            }
+//        });
