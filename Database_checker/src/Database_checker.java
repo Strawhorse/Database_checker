@@ -107,7 +107,7 @@ public class Database_checker extends JFrame implements ActionListener {
             }
 
             try {
-                Database_actions.databaseChecker(schemaField.getText(), usernameField.getText(), passwordField.getText());
+                Database_actions.databaseChecker();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             } catch (ClassNotFoundException ex) {
