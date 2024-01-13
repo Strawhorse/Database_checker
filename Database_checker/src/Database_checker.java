@@ -118,6 +118,35 @@ public class Database_checker extends JFrame implements ActionListener {
 
         if(e.getSource()==m2) {
             System.out.println("Check Database entries");
+            JTextField schemaField = new JTextField(10);
+            JTextField usernameField = new JTextField(10);
+            JTextField passwordField = new JTextField(10);
+
+            JPanel myPanel = new JPanel();
+            myPanel.add(new JLabel("Schema:"));
+            myPanel.add(schemaField);
+            myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+            myPanel.add(new JLabel("Username:"));
+            myPanel.add(usernameField);
+            myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+            myPanel.add(new JLabel("Password:"));
+            myPanel.add(passwordField);
+
+            int result = JOptionPane.showConfirmDialog(null, myPanel,
+                    "Please Enter Database Schema, Username, and Password", JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_OPTION) {
+                System.out.println("Schema: " + schemaField.getText());
+                System.out.println("Username: " + usernameField.getText());
+                System.out.println("Password: " + passwordField.getText());
+            } else {
+                System.out.println("Nothing entered...");
+            }
+
+            try {
+                Database_actions.listDatabaseEntries();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
         if(e.getSource()==m3) {

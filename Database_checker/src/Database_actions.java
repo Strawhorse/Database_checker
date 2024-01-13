@@ -13,6 +13,19 @@ public class Database_actions {
 //        p.executeUpdate();
 //        Might be a problem with this statement
 
+
+
+
+
+//Works now, was problem with JAR file
+
+    }
+
+    public static void listDatabaseEntries() throws SQLException {
+        System.out.println("Entries for database include:");
+
+        Connection con = DB.getCon();
+
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM PROFILE;");
 
@@ -26,15 +39,6 @@ public class Database_actions {
         rs.close();
         stmt.close();
         con.close();
-
-
-
-//Works now, was problem with JAR file
-
-    }
-
-    public static void listDatabaseEntries(){
-        System.out.println("Entries for database include:");
     }
 
 
