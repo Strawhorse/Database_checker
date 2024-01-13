@@ -7,11 +7,13 @@ public class Database_actions {
     public static void databaseChecker() throws SQLException, ClassNotFoundException {
         Connection con = DB.getCon();
         System.out.println("Database connection reached...");
-//        String query = "SHOW DATABASES";
-//        String query2 = "select * from profile;";
-//        PreparedStatement p = con.prepareStatement(query);
-//        p.executeUpdate();
-//        Might be a problem with this statement
+        System.out.println("List of databases are: \n");
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SHOW DATABASES");
+        while(rs.next()){
+            System.out.println(rs.getString(1));
+            System.out.println();
+        }
 
 
 
@@ -22,6 +24,12 @@ public class Database_actions {
     }
 
     public static void listDatabaseEntries() throws SQLException {
+
+//        https://stackoverflow.com/questions/21898053/display-records-from-mysql-database-using-jtable-in-java
+//        https://coderanch.com/t/669395/java/Insert-data-JTable-existing-MySQL
+
+
+        
         System.out.println("Entries for database include:");
 
         Connection con = DB.getCon();
