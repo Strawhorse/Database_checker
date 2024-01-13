@@ -7,10 +7,27 @@ public class Database_actions {
     public static void databaseChecker() throws SQLException, ClassNotFoundException {
         Connection con = DB.getCon();
         System.out.println("Database connection reached...");
-        String query = "SHOW DATABASES";
-        PreparedStatement p = con.prepareStatement(query);
-        p.executeUpdate();
+//        String query = "SHOW DATABASES";
+//        String query2 = "select * from profile;";
+//        PreparedStatement p = con.prepareStatement(query);
+//        p.executeUpdate();
 //        Might be a problem with this statement
+
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM PROFILE;");
+
+        while (rs.next()){
+            int id = rs.getInt("id");
+            String name = rs.getString("name");
+            String domain = rs.getString("domain");
+            String address = rs.getString("address");
+            System.out.format("%s, %s, %s, %s, id", id, name, domain, address);
+        }
+        rs.close();
+        stmt.close();
+        con.close();
+
+
 
 //Works now, was problem with JAR file
 
