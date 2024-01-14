@@ -4,8 +4,8 @@ import java.sql.*;
 public class Database_actions {
 
 //    enter database methods here
-    public static void databaseChecker() throws SQLException, ClassNotFoundException {
-        Connection con = DB.getCon();
+    public static void databaseChecker(String user, String password) throws SQLException, ClassNotFoundException {
+        Connection con = DB.getCon(user, password);
         System.out.println("Database connection reached...");
         System.out.println("List of databases are: \n");
         Statement stmt = con.createStatement();
@@ -23,7 +23,7 @@ public class Database_actions {
 
     }
 
-    public static void listDatabaseEntries() throws SQLException {
+    public static void listDatabaseEntries(String user, String password) throws SQLException {
 
 //        https://stackoverflow.com/questions/21898053/display-records-from-mysql-database-using-jtable-in-java
 //        https://coderanch.com/t/669395/java/Insert-data-JTable-existing-MySQL
@@ -32,7 +32,7 @@ public class Database_actions {
         
         System.out.println("Entries for database include:");
 
-        Connection con = DB.getCon();
+        Connection con = DB.getCon(user, password);
 
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM PROFILE;");
@@ -49,37 +49,5 @@ public class Database_actions {
         con.close();
     }
 
-
-
-    public boolean updateEntry(String newName, String newDomain, String newAddress, int id) {
-//        make use of MySQL update command for final crud operation
-
-        boolean check = false;
-        try{
-            Connection con = DB.getCon();
-            String query = new StringBuilder().append("UPDATE profile set name=\'").append(newName).append("\', domain=\'").append(newDomain).append("\', address=\'").append(newAddress).append("\' where id=").append(id).toString();
-
-//            Run command to delete entry
-            PreparedStatement p = con.prepareStatement(query);
-            p.execute();
-            System.out.println("Successfully updated");
-
-            System.out.println("Updated profile:\n");
-
-            String checkQuery = "Select * from profile where id= "+id;
-            Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery(checkQuery);
-
-            while(rs.next()) {
-                System.out.println("\nID: " + rs.getInt(1) + "\nName: " + rs.getString(2) + "\nDomain: " + rs.getString(3) + "\nAddress: " + rs.getString(4));
-            }
-            check = true;
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-
-        return check;
-    }
 
 }

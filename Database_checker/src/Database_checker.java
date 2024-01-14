@@ -40,7 +40,7 @@ public class Database_checker extends JFrame implements ActionListener {
         menuBar.add(menu2);
 
 //        add items to the menus
-        m1 = new JMenuItem("List Databases");
+        m1 = new JMenuItem("List Databases on computer");
         m2 = new JMenuItem("List Database Entries");
         m3 = new JMenuItem("Delete Database/s");
         m4 = new JMenuItem("Create New Database/s");
@@ -81,25 +81,22 @@ public class Database_checker extends JFrame implements ActionListener {
         if(e.getSource()==m1) {
             System.out.println("Check Database list");
 
-//            Will try practice code here to make into a method in Database_actions later
-            JTextField schemaField = new JTextField(10);
             JTextField usernameField = new JTextField(10);
             JTextField passwordField = new JTextField(10);
 
             JPanel myPanel = new JPanel();
-            myPanel.add(new JLabel("Schema:"));
-            myPanel.add(schemaField);
-            myPanel.add(Box.createHorizontalStrut(15)); // a spacer
             myPanel.add(new JLabel("Username:"));
             myPanel.add(usernameField);
             myPanel.add(Box.createHorizontalStrut(15)); // a spacer
             myPanel.add(new JLabel("Password:"));
             myPanel.add(passwordField);
 
+            String username = usernameField.getText();
+            String pw = passwordField.getText();
+
             int result = JOptionPane.showConfirmDialog(null, myPanel,
-                    "Please Enter Database Schema, Username, and Password", JOptionPane.OK_CANCEL_OPTION);
+                    "Please Enter SQL Username, and Password", JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
-                System.out.println("Schema: " + schemaField.getText());
                 System.out.println("Username: " + usernameField.getText());
                 System.out.println("Password: " + passwordField.getText());
             } else {
@@ -107,7 +104,7 @@ public class Database_checker extends JFrame implements ActionListener {
             }
 
             try {
-                Database_actions.databaseChecker();
+                Database_actions.databaseChecker(username,pw);
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             } catch (ClassNotFoundException ex) {
@@ -143,7 +140,7 @@ public class Database_checker extends JFrame implements ActionListener {
             }
 
             try {
-                Database_actions.listDatabaseEntries();
+                Database_actions.listDatabaseEntries(usernameField.getText(), passwordField.getText());
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
