@@ -12,4 +12,9 @@ Current problem is with database connection not working, inputs seem to work fin
 
 Progress
 
-Need to resolve Database issue
+- connection with MySQL database works fine
+- GUI generally works fine for main window and connection window
+- Issue lies with the specific connection to the different databases that exist on the computer
+- Need to find a way to more generally connect to MySQL on the computer and then access individual databases on it
+
+- The main goal is to be able to create a table of the output in the different databases but that the table responds to how many columns etc. are in each database column and then perform usual CRUD actions
