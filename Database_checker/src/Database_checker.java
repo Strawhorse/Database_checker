@@ -30,44 +30,11 @@ public class Database_checker extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         this.setLayout(new FlowLayout());
 
-//        Then the menu bar and the menu/s
-        menuBar = new JMenuBar();
-        menu = new JMenu("Databases");
-        menu2 = new JMenu("Other");
-
-//        Now add menus to menu bar
-        menuBar.add(menu);
-        menuBar.add(menu2);
-
-//        add items to the menus
-        m1 = new JMenuItem("List Databases on computer");
-        m2 = new JMenuItem("List Database Entries");
-        m3 = new JMenuItem("Delete Database/s");
-        m4 = new JMenuItem("Create New Database/s");
-        m5 = new JMenuItem("Close Program");
-
-        menu.add(m1);
-        menu.add(m2);
-        menu.add(m3);
-        menu.add(m4);
-        menu2.add(m5);
-
-
-//        finally, set the menu bar to the frame
-        this.setJMenuBar(menuBar);
-
-
-
-        //sub-menu items
-        m1.addActionListener(this);
-        m2.addActionListener(this);
-        m3.addActionListener(this);
-        m4.addActionListener(this);
-        m5.addActionListener(this);
 
 
 //      display the frame
         this.setVisible(true);
+
 
     }
 
@@ -144,3 +111,46 @@ public class Database_checker extends JFrame implements ActionListener {
 
 
 }
+
+
+
+
+
+//Reusable code
+
+////        Then the menu bar and the menu/s
+//        menuBar = new JMenuBar();
+//                menu = new JMenu("Databases");
+//                menu2 = new JMenu("Other");
+//
+////        Now add menus to menu bar
+//                menuBar.add(menu);
+//                menuBar.add(menu2);
+//
+////        add items to the menus
+//                m1 = new JMenuItem("List Databases on computer");
+//                m2 = new JMenuItem("List Database Entries");
+//                m3 = new JMenuItem("Delete Database/s");
+//                m4 = new JMenuItem("Create New Database/s");
+//                m5 = new JMenuItem("Close Program");
+//
+//                menu.add(m1);
+//                menu.add(m2);
+//                menu.add(m3);
+//                menu.add(m4);
+//                menu2.add(m5);
+//
+//
+////        finally, set the menu bar to the frame
+//                this.setJMenuBar(menuBar);
+//
+//
+//
+//                //sub-menu items
+//                m1.addActionListener(this);
+//                m2.addActionListener(this);
+//                m3.addActionListener(this);
+//                m4.addActionListener(this);
+//                m5.addActionListener(this);
+//
+//
