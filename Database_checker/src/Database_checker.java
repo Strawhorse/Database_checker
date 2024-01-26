@@ -1,26 +1,29 @@
-import java.sql.SQLException;
-
-public class Database_checker {
 
 
 
-    Database_checker() {
+public class Database_checker extends Application {
 
-//  replace Swing with JavaFX
-
-
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+      /*
+      Code for JavaFX application.
+      (Stage, scene, scene graph)
+      */
     }
 
 
 
 
-
-
-//    main method for instantiating the JFrame class
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-
-        System.out.println("Create instance here...");
+    public static void main(String args[]){
+        launch(args);
     }
+
+}
+
+
+
+
+
 
 
 
